@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My 3D Graph</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://threejs.org/build/three.js"></script>
+    <script>
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        var geometry = new THREE.Geometry();
+        // Replace this with your actual data
+        var data = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        for (var i = 0; i < data.length; i++) {
+            geometry.vertices.push(new THREE.Vector3(data[i][0], data[i][1], data[i][2]));
+        }
+
+        var material = new THREE.PointsMaterial({ color: 0x0000ff, size: 1 });
+        var points = new THREE.Points(geometry, material);
+        scene.add(points);
+
+        camera.position.z = 10;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>

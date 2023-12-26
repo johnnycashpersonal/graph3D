@@ -1,0 +1,5 @@
+MTEyNjI4MzEyNTAzOTg0NTUxMA.G5uT4a.jYSHdgtcwRu_3gOmGVE-3bTyFqF3MWrHqro5tQ
+https://discord.com/api/oauth2/authorize?client_id=1126283125039845510&permissions=117760&scope=bot
+
+117760 - permissions integer
+```
